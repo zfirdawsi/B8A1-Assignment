@@ -2,21 +2,20 @@
 
 ## Introduction
 
-Object-Oriented Programming (OOP) is an important concept in TypeScript. Access modifiers control how class properties and methods can be accessed. They help protect data and organize code.
+In Object-Oriented Programming (OOP), access modifiers control how class properties and methods can be accessed. They help to protect data from unauthorized access.
 
 ## Types of Access Modifiers
 
 TypeScript provides three main access modifiers: `public`, `private`, and `protected`.
 
-- **Public:** Properties and methods can be accessed from anywhere.
-- **Private:** Properties and methods can only be accessed inside the class where they are declared.
-- **Protected:** Properties and methods can be accessed inside the class and its subclasses.
+- Public: Properties and methods can be accessed from anywhere.It is a default access modifier.
+- Private: Properties and methods can only be accessed inside the class where they are declared.
+- Protected: Properties and methods can be accessed inside the class and its subclasses.
 
 Think about a kitchen. Everyone may see the menu, but only the chef should access a private recipe, while the head chef may share certain cooking instructions with assistant chefs. Access modifiers work in a similar way by controlling access.
 
 ## Example
 
-```ts
 class Employee {
     public name: string;
     private salary: number;
@@ -38,9 +37,6 @@ class Manager extends Employee {
         return this.department;
     }
 }
-```
-
-In this example, `name` is public, so it can be accessed from outside the class. `salary` is private, so it cannot be accessed directly outside the Employee class. `department` is protected, so the Manager class can access it through inheritance.
 
 ## Conclusion
 

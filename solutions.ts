@@ -1,10 +1,10 @@
-
-
 function multiplyValue(value: number, multiplier?: number): number {
-    return value * (multiplier ?? 2);
+    if (multiplier === undefined) {
+        return value * 2;
+    } else {
+        return value * multiplier;
+    }
 }
-
-
 
 
 function processInput(input: string | number | boolean): string | number {
@@ -23,9 +23,6 @@ function processInput(input: string | number | boolean): string | number {
     return input;
 }
 
-
-
-
 function formatCoordinate(
     coordinate: readonly [number, number, string]
 ): string {
@@ -36,13 +33,9 @@ function formatCoordinate(
 
 
 
-
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.flat();
 }
-
-
-
 
 interface Course {
     title: string;
@@ -50,28 +43,27 @@ interface Course {
     isPublished: boolean;
 }
 
-function getPopularCourses(
-    courses: Course[],
-    minStudents: number
-): Course[] {
-    return courses.filter(
-        (course: Course): boolean =>
-            course.isPublished && course.students >= minStudents
-    );
+function getPopularCourses(courses: Course[], minStudents: number): Course[] {
+    const popularCourses: Course[] = [];
+
+    courses.forEach((course) => {
+        if (course.isPublished === true && course.students >= minStudents) {
+            popularCourses.push(course);
+        }
+    });
+
+    return popularCourses;
 }
 
+function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
+    const result: T[K][] = [];
 
+    items.forEach((item) => {
+        result.push(item[key]);
+    });
 
-
-function pluckValues<T, K extends keyof T>(
-    items: T[],
-    key: K
-): T[K][] {
-    return items.map((item: T): T[K] => item[key]);
+    return result;
 }
-
-
-
 
 class Employee {
     protected name: string;
@@ -83,34 +75,35 @@ class Employee {
     }
 
     getDetails(): string {
-        return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+        return `Employee: ${this.name}, Salary: ${this.baseSalary}`;
     }
 }
 
 class Manager extends Employee {
     private department: string;
 
-    constructor(name: string, baseSalary: number, department: string) {
+    constructor(
+        name: string,
+        baseSalary: number,
+        department: string
+    ) {
         super(name, baseSalary);
         this.department = department;
     }
 
     getRoleInfo(): string {
-        return `Manager of ${this.department}: ${this.name}`;
+        return `${this.name} is a Manager of ${this.department} department.`;
     }
 }
 
-
-
-
 async function validateAgeAsync(age: number): Promise<string> {
-    if (age < 18) {
-        throw new Error("Access Denied: Must be 18 or older");
-    }
-
-    await new Promise<void>((resolve) => {
-        setTimeout(resolve, 1000);
+    return new Promise((resolve, reject) => {
+        if (age >= 18) {
+            setTimeout(() => {
+                resolve("Access Granted");
+            }, 1000);
+        } else {
+            reject(new Error("Access Denied: Must be 18 or older"));
+        }
     });
-
-    return "Access Granted";
 }

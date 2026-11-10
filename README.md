@@ -2,10 +2,7 @@
 
 ## Overview
 
-This repository contains my solutions for the B8A1 assignment, focused on problem-solving using TypeScript and Object-Oriented Programming (OOP).
-
-The assignment covers eight problems designed to improve my understanding of TypeScript concepts and practical coding skills.
-
+This repository contains my solutions for the B8A1 assignment.
 ## Topics Covered
 
 1. Functions and Optional Parameters

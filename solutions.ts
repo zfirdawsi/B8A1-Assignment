@@ -1,11 +1,11 @@
-// Problem 1: Optional and Default Parameters
+
 
 function multiplyValue(value: number, multiplier?: number): number {
     return value * (multiplier ?? 2);
 }
 
 
-// Problem 2: Union Types and Type Narrowing
+
 
 function processInput(input: string | number | boolean): string | number {
     if (typeof input === "string") {
@@ -24,7 +24,7 @@ function processInput(input: string | number | boolean): string | number {
 }
 
 
-// Problem 3: Readonly Tuple
+
 
 function formatCoordinate(
     coordinate: readonly [number, number, string]
@@ -35,14 +35,14 @@ function formatCoordinate(
 }
 
 
-// Problem 4: Generic Function and Rest Parameters
+
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.flat();
 }
 
 
-// Problem 5: Interface and Array Filtering
+
 
 interface Course {
     title: string;
@@ -61,7 +61,7 @@ function getPopularCourses(
 }
 
 
-// Problem 6: Generics with keyof Constraint
+
 
 function pluckValues<T, K extends keyof T>(
     items: T[],
@@ -71,7 +71,7 @@ function pluckValues<T, K extends keyof T>(
 }
 
 
-// Problem 7: Object-Oriented Programming
+
 
 class Employee {
     protected name: string;
@@ -101,7 +101,7 @@ class Manager extends Employee {
 }
 
 
-// Problem 8: Promise and Async Function
+
 
 async function validateAgeAsync(age: number): Promise<string> {
     if (age < 18) {

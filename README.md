@@ -25,8 +25,8 @@ The assignment covers eight problems designed to improve my understanding of Typ
 
 ## Blog Posts
 
-1. [Understanding Type Narrowing in TypeScript](./blog-1.md)
-2. [Understanding Access Modifiers in TypeScript](./blog-2.md)
+1. [Understanding Type Narrowing in TypeScript [TOPIC 3]](./blog-1.md)
+2. [Understanding Access Modifiers in TypeScript [TOPIC 5]](./blog-2.md)
 
 ## Technologies Used
 

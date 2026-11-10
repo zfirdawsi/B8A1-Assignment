@@ -1,4 +1,4 @@
-# Understanding Type Narrowing in TypeScript topic 3
+# Understanding Type Narrowing in TypeScript [TOPIC 3]
 
 ## Introduction
 
